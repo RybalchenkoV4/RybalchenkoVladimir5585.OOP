@@ -23,7 +23,7 @@ public class VendingMachine {
         return null;
     }
 
-    public Chocolate getChocolate(String name, double calorieContent){
+    public Chocolate getChocolate(String name, int calorieContent){
         for (Product product : products){
             if (product instanceof Chocolate){
                 Chocolate chocolate = (Chocolate)product;

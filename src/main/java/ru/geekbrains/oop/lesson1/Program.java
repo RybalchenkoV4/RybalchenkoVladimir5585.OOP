@@ -33,16 +33,17 @@ public class Program {
 
         Product product11 = new BottleOfWater("Name #3", 250, 0.5);
         Product product22 = new BottleOfMilk("Brand #1", "Name #2", 350, 0.5, 1);
-
+        Product product3 = new Chocolate("Nestle", "Nuts", 500, 1100);
 
         ArrayList<Product> list = new ArrayList<>();
         list.add(bottleOfWater1);
         list.add(bottleOfMilk1);
         list.add(product11);
         list.add(product22);
+        list.add(product3);
 
         VendingMachine vendingMachine = new VendingMachine(list);
-        BottleOfWater bottleOfWaterRes = vendingMachine.getBottleOfWater("Name #3", 0.55);
+        BottleOfWater bottleOfWaterRes = vendingMachine.getBottleOfWater("Name #3", 0.5);
         if (bottleOfWaterRes != null){
             System.out.println("Вы купили: ");
             System.out.println(bottleOfWaterRes.displayInfo());
@@ -51,7 +52,13 @@ public class Program {
             System.out.println("Такой бутылки с водой нет в автомате.");
         }
 
-
+        Chocolate chocolate = vendingMachine.getChocolate("Nuts", 1100);
+        if (chocolate != null) {
+            System.out.println("Вы купили: ");
+            System.out.println(chocolate.displayInfo());
+        }else{
+            System.out.println("Такой шоколадки нет в автомате.");
+        }
     }
 
 }
